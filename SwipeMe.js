@@ -14,7 +14,11 @@ window.swipe = function(settings){
 		
 		var swipe = {
 			length: 0,
-			direction: 'none'
+			direction: 'none',
+			sx: 0,
+			sy: 0,
+			ex: 0,
+			ey: 0
 		},
 			tmpX = 0,
 			tmpY = 0;
@@ -53,6 +57,10 @@ window.swipe = function(settings){
 					if(tmpHypLength>=settings.thresholdLength){
 						swipe.direction = _processAngle(_convertToDegrees(tmpAngle,true));
 						swipe.length = tmpHypLength;
+						swipe.sx = startX;
+						swipe.sy = startY;
+						swipe.ex = tmpX;
+						swipe.ey = tmpY;
 					}
 					settings.endCallback(swipe);
 				}
@@ -62,6 +70,10 @@ window.swipe = function(settings){
 			_touchCancel = function(){
 				swipe.length = 0;
 				swipe.direction = 'none';
+				swipe.sx = 0;
+				swipe.sy = 0;
+				swipe.ex = 0;
+				swipe.ey = 0;
 				tmpX = 0;
 				tmpY = 0;
 			};
