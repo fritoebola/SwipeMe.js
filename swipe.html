@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title></title>
+		<style>
+			#swipeelement {
+				width:500px;
+				height:500px;
+				background-color:#F00;
+			}
+		</style>
+		<script type="text/javascript" src="SwipeMe.js"></script>
+		<script>
+
+		window.onload = function(){
+		
+			var touchSwipe = swipe({
+				element: document.getElementById('swipeelement'),
+				endCallback: function(swipe){
+					console.log(swipe.direction+" "+swipe.length);
+				}
+			});
+			
+		};
+		
+		</script>
+		
+	</head>
+	<body>
+	
+		<div id="swipeelement"></div>
+	
+	</body>
+</html>
