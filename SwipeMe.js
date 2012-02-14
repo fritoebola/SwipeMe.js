@@ -56,12 +56,12 @@ window.swipe = function(settings){
 						tmpAngle = Math.atan2(tmpYLength,tmpXLength);
 					if(tmpHypLength>=settings.thresholdLength){
 						swipe.direction = _processAngle(_convertToDegrees(tmpAngle,true));
-						swipe.length = tmpHypLength;
-						swipe.sx = startX;
-						swipe.sy = startY;
-						swipe.ex = tmpX;
-						swipe.ey = tmpY;
 					}
+					swipe.length = tmpHypLength;
+					swipe.sx = startX;
+					swipe.sy = startY;
+					swipe.ex = tmpX;
+					swipe.ey = tmpY;
 					settings.endCallback(swipe);
 				}
 				_touchCancel();
