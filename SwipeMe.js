@@ -33,6 +33,8 @@ window.swipe = function(settings){
 				} else {
 					startX = e.touches[0].pageX;
 					startY = e.touches[0].pageY;
+					swipe.sx = startX;
+					swipe.sy = startY;
 					settings.startCallback(swipe);
 				}	
 			};
@@ -44,6 +46,8 @@ window.swipe = function(settings){
 					e.preventDefault();
 					tmpX = e.touches[0].pageX;
 					tmpY = e.touches[0].pageY;
+					swipe.ex = tmpX;
+					swipe.ey =  tmpY;
 					settings.moveCallback(swipe);
 				}
 			};
