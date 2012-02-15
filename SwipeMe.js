@@ -1,5 +1,5 @@
 window.swipe = function(settings){
-	
+	settings = settings || {};
 	settings = {
 		element: settings.element || null,
 		startCallback: settings.startCallback || function(){},
